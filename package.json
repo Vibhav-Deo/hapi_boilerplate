@@ -11,6 +11,6 @@
     "type": "git",
     "url": "git@github.com:Vibhav-Deo/hapi_boilerplate.git"
   },
-  "author": "Vibhav",
-  "license": "ISC"
+  "author": "Vibhav and Ammer",
+  "license": "Apache - 2.0"
 }
