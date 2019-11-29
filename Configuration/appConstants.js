@@ -24,11 +24,6 @@ const STATUS_MSG = {
             customMessage: 'You are already registered with us',
             type: 'USER_ALREADY_REGISTERED'
         },
-        FACEBOOK_ID_PASSWORD_ERROR: {
-            statusCode: 400,
-            customMessage: 'Only one field should be filled at a time, either facebookId or password',
-            type: 'FACEBOOK_ID_PASSWORD_ERROR'
-        },
         PASSWORD_REQUIRED: {
             statusCode: 400,
             customMessage: 'Password is required',
@@ -38,21 +33,6 @@ const STATUS_MSG = {
             statusCode: 400,
             customMessage: 'Invalid Country Code, Should be in the format +52',
             type: 'INVALID_COUNTRY_CODE'
-        },
-        INVALID_PHONE_NO_FORMAT: {
-            statusCode: 400,
-            customMessage: 'Phone no. cannot start with 0',
-            type: 'INVALID_PHONE_NO_FORMAT'
-        },
-        IMP_ERROR: {
-            statusCode: 500,
-            customMessage: 'Implementation Error',
-            type: 'IMP_ERROR'
-        },
-        UNIQUE_CODE_LIMIT_REACHED: {
-            statusCode: 400,
-            customMessage: 'Cannot Generate Unique Code, All combinations are used',
-            type: 'UNIQUE_CODE_LIMIT_REACHED'
         },
         PHONE_NO_EXIST: {
             statusCode: 400,
@@ -91,68 +71,18 @@ const STATUS_MSG = {
         },
         NOT_REGISTERED: {
             statusCode: 400,
-            customMessage: 'You are not registered with YapApp. Kindly register yourself to avail services!',
+            customMessage: 'You are not registered with us. Please register yourself to use the services',
             type: 'NOT_REGISTERED'
-        },
-        FACEBOOK_ID_NOT_FOUND: {
-            statusCode: 400,
-            customMessage: 'Facebook Id Not Found',
-            type: 'FACEBOOK_ID_NOT_FOUND'
-        },
-        PHONE_VERIFICATION_COMPLETE: {
-            statusCode: 400,
-            customMessage: 'Your mobile number verification is already completed.',
-            type: 'PHONE_VERIFICATION_COMPLETE'
-        },
-        OTP_CODE_NOT_FOUND: {
-            statusCode: 400,
-            customMessage: 'Otp code not found for this user',
-            type: 'OTP_CODE_NOT_FOUND'
         },
         NOT_FOUND: {
             statusCode: 400,
             customMessage: 'User Not Found',
             type: 'NOT_FOUND'
         },
-        WRONG_PASSWORD: {
-            statusCode: 400,
-            customMessage: 'Invalid old password',
-            type: 'WRONG_PASSWORD'
-        },
-        NOT_UPDATE: {
-            statusCode: 409,
-            customMessage: 'New password must be different from old password',
-            type: 'NOT_UPDATE'
-        },
-        PASSWORD_CHANGE_REQUEST_INVALID: {
-            statusCode: 400,
-            type: 'PASSWORD_CHANGE_REQUEST_INVALID',
-            customMessage: 'Invalid password change request.'
-        },
         USER_NOT_REGISTERED: {
             statusCode: 401,
             customMessage: 'User is not registered with us',
             type: 'USER_NOT_REGISTERED'
-        },
-        PHONE_VERIFICATION: {
-            statusCode: 400,
-            customMessage: 'Your mobile number verification is incomplete.',
-            type: ' PHONE_VERIFICATION'
-        },
-        INCORRECT_ID: {
-            statusCode: 401,
-            customMessage: 'Incorrect Phone Number',
-            type: 'INCORRECT_ID'
-        },
-        NOT_VERFIFIED: {
-            statusCode: 401,
-            customMessage: 'User Not Verified',
-            type: 'NOT_VERFIFIED'
-        },
-        PASSWORD_CHANGE_REQUEST_EXPIRE: {
-            statusCode: 400,
-            customMessage: ' Password change request time expired',
-            type: 'PASSWORD_CHANGE_REQUEST_EXPIRE'
         },
         INVALID_EMAIL_FORMAT: {
             statusCode: 400,
