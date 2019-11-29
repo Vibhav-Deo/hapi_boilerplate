@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 const HAPI = require('hapi');
 const APP_CONSTANTS = require('./Configuration/appConstants');
