@@ -3,7 +3,7 @@ const debug = require('debug')('app:DB-->')
 const CONFIG = require('../../Configuration/dbConfig')
 
 const setupDB = () => {
-    var db = new mongoose.mongo.MongoClient(`${CONFIG.ADAPTER}://${CONFIG.HOST}:${CONFIG.PORT}/${CONFIG.DBNAME}`, { useNewUrlParser: true });
+    var db = new mongoose.mongo.MongoClient(`${CONFIG.ADAPTER}://${CONFIG.HOST}:${CONFIG.PORT}/${CONFIG.DBNAME}`, { useNewUrlParser: true, useUnifiedTopology: true });
     var userExists = false;
     db.connect((error, result) => {
         if (error) debug(error)
@@ -32,6 +32,7 @@ const setupDB = () => {
 const initDB = () => {
     const options = {
         useNewUrlParser: true,
+        useUnifiedTopology: true
     };
     const connectionString = `${CONFIG.ADAPTER}://${CONFIG.USERNAME}:${CONFIG.PASSWORD}@${CONFIG.HOST}:${CONFIG.PORT}/${CONFIG.DBNAME}`;
 

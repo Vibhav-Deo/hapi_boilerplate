@@ -1,10 +1,11 @@
 'use-strict';
 
-var HAPI = require('hapi');
-var APP_CONSTANTS = require('./Configuration/appConstants');
-var ROUTES = require('./Routes')
-var SERVICES = require('./Services')
+const HAPI = require('hapi');
+const APP_CONSTANTS = require('./Configuration/appConstants');
+const ROUTES = require('./Routes')
+const SERVICES = require('./Services')
 const debug = require('debug')('app:SERVER-->')
+const Plugins = require('./Plugins')
 
 const init = async () => {
 
@@ -16,11 +17,14 @@ const init = async () => {
             name: APP_CONSTANTS.SERVER.APP_NAME
         },
         port: APP_CONSTANTS.SERVER.PORT,
-        host: APP_CONSTANTS.SERVER.HOST
+        host: APP_CONSTANTS.SERVER.HOST,
+        routes: { cors: true }
     });
 
+
+
     //Register All Plugins
-    await server.register(require('@hapi/vision'), {}, (err) => {
+    await server.register(Plugins, {}, (err) => {
         if (err) {
             server.log(['error'], 'Error while loading plugins : ' + err)
         }
@@ -50,7 +54,7 @@ const init = async () => {
     );
 
     try {
-        await server.route(ROUTES);
+        server.route(ROUTES);
     } catch (error) {
         return 'Route not found'
     }

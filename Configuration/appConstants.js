@@ -5,6 +5,13 @@ const SERVER = {
     APP_NAME: 'BOILERPLATE'
 }
 
+var swaggerDefaultResponseMessages = [
+    { code: 200, message: 'OK' },
+    { code: 400, message: 'Bad Request' },
+    { code: 401, message: 'Unauthorized' },
+    { code: 404, message: 'Data Not Found' }]
+
+
 const STATUS_MSG = {
     ERROR: {
         DEFAULT: {
@@ -189,5 +196,6 @@ const STATUS_MSG = {
 
 module.exports = {
     SERVER: SERVER,
-    STATUS_MSG: STATUS_MSG
+    STATUS_MSG: STATUS_MSG,
+    swaggerDefaultResponseMessages: swaggerDefaultResponseMessages
 }

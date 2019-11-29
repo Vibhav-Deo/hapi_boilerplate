@@ -1,23 +1,34 @@
-var Controller = require('../../Controllers');
+const Controller = require('../../Controllers');
+const Joi = require('joi');
+const Config = require('../../Configuration/appConstants')
 
 var demoApi = {
-    method: "POST",
-    path: "/api/demo/demoApi",
+    method: "GET",
+    path: "/demo/api/{name}",
     config: {
-        description: "demo api",
+        description: "Demo API",
         tags: ["api", "demo"],
         handler: function (request, h) {
-            var userData = request.payload;
             return new Promise((resolve, reject) => {
-                Controller.DemoBaseController.demoFunction(userData, function (
-                    error,
+                Controller.DemoBaseController.demoFunction(request.params, function (
+                    err,
                     data
                 ) {
-                    if (err) reject(error);
+                    if (err) reject(Config.STATUS_MSG.ERROR.DEFAULT);
                     else
-                        resolve(data);
+                        resolve(Config.STATUS_MSG.SUCCESS.DEFAULT);
                 });
             });
+        },
+        validate: {
+            params: {
+                name: Joi.string().required()
+            }
+        },
+        plugins: {
+            "hapi-swagger": {
+                responseMessages: Config.swaggerDefaultResponseMessages
+            }
         }
     }
 };
