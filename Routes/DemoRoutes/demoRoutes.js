@@ -13,16 +13,19 @@ var demoApi = {
         name: Joi.string().required(),
       }),
     },
-    handler: function (request, h) {
-      return new Promise((resolve, reject) => {
-        Controller.DemoBaseController.demoFunction(request.params, function (
-          err,
-          data
-        ) {
-          if (err) reject(Config.STATUS_MSG.ERROR.DEFAULT);
-          else resolve(Config.STATUS_MSG.SUCCESS.DEFAULT);
-        });
-      });
+    handler: async function (request, h) {
+      return await Controller.DemoBaseController.demoFunction(
+        request.params,
+        function (err, data) {
+          if (err) Config.STATUS_MSG.ERROR.DEFAULT;
+          else {
+            return {
+              ...Config.STATUS_MSG.SUCCESS.DEFAULT,
+              data: data,
+            };
+          }
+        }
+      );
     },
     plugins: {
       'hapi-swagger': {

@@ -65,7 +65,8 @@ const init = async () => {
         ' --> ' +
         request.response.statusCode
     );
-    debug('Request payload:', request.payload);
+    if (request.payload) debug('Request payload:', request.payload);
+    if (request.params) debug('Request params', request.params);
   });
 
   //Register plugins
