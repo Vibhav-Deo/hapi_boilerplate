@@ -28,16 +28,6 @@ const STATUS_MSG = {
       customMessage: 'Password is required',
       type: 'PASSWORD_REQUIRED',
     },
-    INVALID_COUNTRY_CODE: {
-      statusCode: 400,
-      customMessage: 'Invalid Country Code, Should be in the format +52',
-      type: 'INVALID_COUNTRY_CODE',
-    },
-    PHONE_NO_EXIST: {
-      statusCode: 400,
-      customMessage: 'Mobile No. Already Exist',
-      type: 'PHONE_NO_EXIST',
-    },
     USERNAME_EXIST: {
       statusCode: 400,
       customMessage: 'Username Already Exist',
