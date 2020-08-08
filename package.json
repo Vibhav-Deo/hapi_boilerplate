@@ -1,26 +1,32 @@
 {
   "name": "hapi_boilerplate",
   "version": "1.0.0",
-  "description": "inital base for other projects.",
+  "description": "A boiler plate to scafold applications quickly",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test",
     "start": "nodemon server.js"
   },
+  "keywords": [
+    "hapi",
+    "api",
+    "framework",
+    "boilerplate"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:Vibhav-Deo/hapi_boilerplate.git"
   },
-  "author": "Vibhav and Ammer",
+  "author": "Vibhav",
   "license": "Apache - 2.0",
   "dependencies": {
-    "@hapi/hapi": "^18.4.0",
-    "@hapi/inert": "^5.2.2",
-    "@hapi/joi": "^16.1.8",
-    "@hapi/vision": "^5.5.4",
-    "debug": "^4.1.1",
+    "@hapi/hapi": "^19.2.0",
+    "@hapi/inert": "^6.0.1",
+    "@hapi/vision": "^6.0.0",
+    "core-js": "^3.6.5",
     "dotenv": "^8.2.0",
-    "hapi-swagger": "^11.0.1",
-    "mongoose": "^5.7.12"
+    "hapi-swagger": "^13.1.0",
+    "mongoose": "^5.9.27",
+    "nodemon": "^2.0.4"
   }
 }
