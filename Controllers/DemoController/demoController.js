@@ -1,6 +1,7 @@
-const Controller = require('../../Controllers');
+const Controller = require('../../Services');
 const Joi = require('@hapi/joi');
 const Config = require('../../Configuration/appConstants');
+const UniversalFunctions = require('../../Utilities');
 
 var demoApi = {
   method: 'GET',
@@ -17,12 +18,13 @@ var demoApi = {
       return await Controller.DemoBaseController.demoFunction(
         request.params,
         function (err, data) {
-          if (err) Config.STATUS_MSG.ERROR.DEFAULT;
+          if (err)
+            return UniversalFunctions.sendError(err, {
+              statusCode: 400,
+              message: 'something went wrong',
+            });
           else {
-            return {
-              ...Config.STATUS_MSG.SUCCESS.DEFAULT,
-              data: data,
-            };
+            return UniversalFunctions.sendSuccess(data, 'Success');
           }
         }
       );

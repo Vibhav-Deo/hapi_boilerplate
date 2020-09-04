@@ -1,5 +1,5 @@
-const DBHELPER = require('./DB/dbHelper');
+'use-strict';
 
 module.exports = {
-    DBHELPER: DBHELPER
-}
+  DemoBaseController: require('./DemoService/demoService'),
+};

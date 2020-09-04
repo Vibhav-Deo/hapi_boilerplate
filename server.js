@@ -2,8 +2,8 @@
 
 const HAPI = require('@hapi/hapi');
 const APP_CONSTANTS = require('./Configuration/appConstants');
-const ROUTES = require('./Routes');
-const SERVICES = require('./Services');
+const ROUTES = require('./Controllers');
+const SERVICES = require('./Repositories');
 const debug = require('debug')('app:SERVER-->');
 const Plugins = require('./Plugins');
 
