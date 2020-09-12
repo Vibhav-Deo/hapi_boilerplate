@@ -1,17 +1,17 @@
-const SERVER = {
+export const SERVER = {
   PORT: 8000,
   HOST: 'localhost',
   APP_NAME: 'BOILERPLATE',
 };
 
-var swaggerDefaultResponseMessages = [
+export var swaggerDefaultResponseMessages = [
   { code: 200, message: 'OK' },
   { code: 400, message: 'Bad Request' },
   { code: 401, message: 'Unauthorized' },
   { code: 404, message: 'Data Not Found' },
 ];
 
-const STATUS_MSG = {
+export const STATUS_MSG = {
   ERROR: {
     DEFAULT: {
       statusCode: 400,
@@ -112,10 +112,4 @@ const STATUS_MSG = {
       type: 'PASSWORD_RESET',
     },
   },
-};
-
-module.exports = {
-  SERVER: SERVER,
-  STATUS_MSG: STATUS_MSG,
-  swaggerDefaultResponseMessages: swaggerDefaultResponseMessages,
 };

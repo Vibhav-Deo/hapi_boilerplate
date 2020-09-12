@@ -2,10 +2,11 @@
   "name": "hapi_boilerplate",
   "version": "1.0.0",
   "description": "A boiler plate to scafold applications quickly",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
     "test": "npm run test",
-    "start": "nodemon server.js"
+    "start": "nodemon server.ts",
+    "tsc": "tsc"
   },
   "keywords": [
     "hapi",
@@ -21,14 +22,30 @@
   "license": "Apache - 2.0",
   "dependencies": {
     "@hapi/boom": "^9.1.0",
-    "@hapi/hapi": "^19.2.0",
-    "@hapi/inert": "^6.0.1",
-    "@hapi/vision": "^6.0.0",
+    "@hapi/glue": "^8.0.0",
+    "@hapi/hapi": "^20.0.0",
+    "@hapi/inert": "^6.0.2",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/vision": "^6.0.1",
+    "@types/dotenv": "^8.2.0",
+    "@types/hapi__glue": "^6.1.1",
+    "@types/hapi__hapi": "^20.0.0",
+    "@types/hapi__inert": "^5.2.0",
+    "@types/hapi__joi": "^17.1.4",
+    "@types/hapi__vision": "^5.5.1",
+    "@types/node": "^14.6.4",
     "bash": "0.0.1",
     "core-js": "^3.6.5",
     "dotenv": "^8.2.0",
     "hapi-swagger": "^13.1.0",
+    "joi": "^17.2.1",
     "mongoose": "^5.9.27",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "remove": "^0.1.5",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.7.36"
   }
 }

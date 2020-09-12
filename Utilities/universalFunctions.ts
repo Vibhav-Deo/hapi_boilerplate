@@ -1,6 +1,5 @@
 const Boom = require('@hapi/boom');
-const sendError = (error, data) => {
-  console.log(error);
+export const sendError = (error: Error, data: object) => {
   if (Boom.isBoom(error)) {
     return error;
   }
@@ -9,7 +8,7 @@ const sendError = (error, data) => {
   }
 };
 
-const sendSuccess = (data, message) => {
+export const sendSuccess = (data: object, message: object) => {
   if (typeof message === 'string' || message instanceof String) {
     return {
       statusCode: 200,
@@ -21,9 +20,4 @@ const sendSuccess = (data, message) => {
     ...message,
     data: data,
   };
-};
-
-module.exports = {
-  sendError: sendError,
-  sendSuccess: sendSuccess,
 };
