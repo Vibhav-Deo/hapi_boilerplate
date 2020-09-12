@@ -54,19 +54,21 @@ const init = async () => {
     debug('Error while fetching routes', error);
   }
 
-  // server.events.on('request', (request: Request, event: RequestEvent, tags) => {
-  //   debug(
-  //     request.info.remoteAddress +
-  //       ': ' +
-  //       request.method.toUpperCase() +
-  //       ' ' +
-  //       request.url.pathname +
-  //       ' --> ' +
-  //       request.response.message
-  //   );
-  //   if (request.payload) debug('Request payload:', request.payload);
-  //   if (request.params) debug('Request params', request.params);
-  // });
+  server.events.on('response', (request: any) => {
+    debug(
+      request.info.remoteAddress +
+        ': ' +
+        request.method.toUpperCase() +
+        ' ' +
+        request.url.pathname +
+        ' --> ' +
+        JSON.stringify(request.response.source) +
+        ' --> ' +
+        request.response.statusCode
+    );
+    if (request.payload) debug('Request payload:', request.payload);
+    if (request.params) debug('Request params:', request.params);
+  });
 
   //Register plugins
 
