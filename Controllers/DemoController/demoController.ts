@@ -16,11 +16,11 @@ var demoApi = {
     },
     handler: async function (request: any, h: any) {
       return await DemoService.demoFunction(request.params, function (
-        err: Error,
+        error: Error,
         data: object
       ) {
-        if (err)
-          return sendError(err, {
+        if (error)
+          return sendError(error, {
             statusCode: 400,
             message: 'something went wrong',
           });

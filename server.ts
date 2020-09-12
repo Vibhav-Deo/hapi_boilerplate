@@ -75,8 +75,8 @@ const init = async () => {
   await server.start();
   debug('Server running on %s', server.info.uri);
 };
-process.on('unhandledRejection', (err) => {
-  debug(err);
+process.on('unhandledRejection', (error) => {
+  debug(error);
   process.exit(1);
 });
 init();
