@@ -1,4 +1,3 @@
-var demoRoutes = require('./DemoController/demoController').default;
-var ROUTES = [].concat(demoRoutes);
-
-module.exports = ROUTES;
+import demoRoutes from './DemoController/demoController';
+import tokenRoutes from './AuthController/authController';
+export const ROUTES = [demoRoutes, tokenRoutes];

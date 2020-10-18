@@ -14,7 +14,7 @@ const hapiSwaggerOptions: HapiSwagger.RegisterOptions = {
   },
   securityDefinitions: {
     jwt: {
-      type: 'apiKey',
+      type: 'oauth2',
       name: 'Authorization',
       in: 'header',
     },

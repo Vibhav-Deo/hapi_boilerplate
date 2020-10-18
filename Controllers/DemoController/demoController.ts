@@ -1,7 +1,7 @@
 import * as DemoService from '../../Services';
-import { object, string } from '@hapi/joi';
+import { object, required, string } from '@hapi/joi';
 import { swaggerDefaultResponseMessages } from '../../Configuration/appConstants';
-import { sendError, sendSuccess } from '../../Utilities';
+import { sendError, sendSuccess, generateRandomString } from '../../Utilities';
 
 var demoApi = {
   method: 'GET',
@@ -9,6 +9,9 @@ var demoApi = {
   options: {
     description: 'Demo API',
     tags: ['api', 'demo'],
+    auth: {
+      mode: 'required',
+    },
     validate: {
       params: object({
         name: string().required(),
@@ -19,13 +22,9 @@ var demoApi = {
         error: Error,
         data: object
       ) {
-        if (error)
-          return sendError(error, {
-            statusCode: 400,
-            message: 'something went wrong',
-          });
+        if (error) return sendError(error);
         else {
-          return sendSuccess(data, {});
+          return sendSuccess(data, 'SUCCESS');
         }
       });
     },
